@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
-import {useState} from "react";
+import React, {useState} from "react";
 
 function LoginScreen({navigation}) {
     const [username, setUsername] = useState('');
@@ -7,7 +7,7 @@ function LoginScreen({navigation}) {
 
     // identificar login
     const idfLogin = () => {
-        if(username ==='admin' && password === '123456') {
+        if(username === 'admin' && password === '123456') {
             navigation.navigate('Home');
         }else{
             Alert.alert('Erro identificado!','Login ou senha incorretos');
@@ -23,12 +23,12 @@ function LoginScreen({navigation}) {
                 onChangeText={setUsername}
                 value={username}
             />
-                <TextInput 
+            <TextInput 
                 style={styles.box}
                 placeholder="Senha"
                 secureTextEntry
                 onChangeText={setPassword}
-                value="password"
+                value={password}
                 />
             <Button title="Entrar" onPress={idfLogin} />
         </View>
@@ -57,6 +57,5 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 })
-
 
 export default LoginScreen
