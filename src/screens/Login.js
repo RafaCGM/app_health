@@ -1,11 +1,7 @@
 import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import React, {useState} from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {useState} from "react";
 
-const stack = createNativeStackNavigator();
-
-function LoginScreen({ navigation}) {
+function LoginScreen({navigation}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
