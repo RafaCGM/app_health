@@ -7,8 +7,8 @@ function LoginScreen({navigation}) {
 
     // identificar login
     const idfLogin = () => {
-        if(username === 'admin' && password === '123456') {
-            navigation.navigate('Home');
+        if(username === 'admin' && password === '123') {
+            navigation.navigate('Desktop');
         }else{
             Alert.alert('Erro identificado!','Login ou senha incorretos');
         }
