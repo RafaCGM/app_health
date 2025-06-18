@@ -1,5 +1,8 @@
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useState } from "react";
+
+// Importe a imagem de fundo
+import bemEstarImg from '../../assets/bem_estar.png';
 
 function CalculoIMCScreen() {
     const [peso, setPeso] = useState('');
@@ -44,79 +47,90 @@ function CalculoIMCScreen() {
     };
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.titulo1}>Cálculo do IMC</Text>
-            <Text>Digite seu Peso</Text>
-            <TextInput
-                style={styles.textinput}
-                value={peso}
-                onChangeText={(text) => setPeso(text.replace(/\D/g, ""))}
-                keyboardType="number-pad"
-            />
+        <ImageBackground source={bemEstarImg} style={styles.background} resizeMode="cover">
+            <View style={styles.container}>
+                <Text style={styles.titulo1}>Cálculo do IMC</Text>
+                <Text>Digite seu Peso</Text>
+                <TextInput
+                    style={styles.textinput}
+                    value={peso}
+                    onChangeText={(text) => setPeso(text.replace(/\D/g, ""))}
+                    keyboardType="number-pad"
+                />
 
-            <Text>Digite sua Altura</Text>
-            <TextInput
-                style={styles.textinput}
-                value={altura}
-                onChangeText={(text) => setAltura(text.replace(/\D/g, ""))}
-                keyboardType="number-pad"
-            />
+                <Text>Digite sua Altura</Text>
+                <TextInput
+                    style={styles.textinput}
+                    value={altura}
+                    onChangeText={(text) => setAltura(text.replace(/\D/g, ""))}
+                    keyboardType="number-pad"
+                />
 
-            <View style={styles.genContainer}>
-                <TouchableOpacity
-                    style={[
-                        styles.genButton,
-                        genero === 'F' && styles.genButtonSelected
-                    ]}
-                    onPress={() => handleGenero('F')}
-                >
-                    <Text style={[
-                        styles.genText,
-                        genero === 'F' && styles.genTextSelected
-                    ]}>Feminino</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[
-                        styles.genButton,
-                        genero === 'M' && styles.genButtonSelected
-                    ]}
-                    onPress={() => handleGenero('M')}
-                >
-                    <Text style={[
-                        styles.genText,
-                        genero === 'M' && styles.genTextSelected
-                    ]}>Masculino</Text>
-                </TouchableOpacity>
-            </View>
-
-            <TouchableOpacity onPress={handleCalcular} style={styles.touch}>
-                <Text style={styles.touchText}>Calcular</Text>
-            </TouchableOpacity>
-
-            {resultado !== '' && (
-                <View style={styles.resultadoBox}>
-                    <Text style={styles.resultadoText}>{resultado}</Text>
+                <View style={styles.genContainer}>
+                    <TouchableOpacity
+                        style={[
+                            styles.genButton,
+                            genero === 'F' && styles.genButtonSelected
+                        ]}
+                        onPress={() => handleGenero('F')}
+                    >
+                        <Text style={[
+                            styles.genText,
+                            genero === 'F' && styles.genTextSelected
+                        ]}>Feminino</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={[
+                            styles.genButton,
+                            genero === 'M' && styles.genButtonSelected
+                        ]}
+                        onPress={() => handleGenero('M')}
+                    >
+                        <Text style={[
+                            styles.genText,
+                            genero === 'M' && styles.genTextSelected
+                        ]}>Masculino</Text>
+                    </TouchableOpacity>
                 </View>
-            )}
-        </View>
+
+                <TouchableOpacity onPress={handleCalcular} style={styles.touch}>
+                    <Text style={styles.touchText}>Calcular</Text>
+                </TouchableOpacity>
+
+                {resultado !== '' && (
+                    <View style={styles.resultadoBox}>
+                        <Text style={styles.resultadoText}>{resultado}</Text>
+                    </View>
+                )}
+            </View>
+        </ImageBackground>
     );
 }
 
 export default CalculoIMCScreen
 
 const styles = StyleSheet.create({
-    container: {
+    background: {
         flex: 1,
-        backgroundColor: '#ccc',
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    container: {
+        backgroundColor: 'rgba(204,204,204,0.85)',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 20
+        padding: 20,
+        borderRadius: 16,
+        width: '90%',
+        alignSelf: 'center'
     },
     titulo1: {
         fontSize: 32,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: '#0000AA',
+        color: '#000000',
         marginBottom: 24
     },
     textinput: {
@@ -184,3 +198,4 @@ const styles = StyleSheet.create({
         textAlign: "center"
     }
 });
+       
