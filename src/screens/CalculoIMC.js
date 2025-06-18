@@ -1,7 +1,7 @@
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useState } from "react";
 
-// Importe a imagem de fundo
+// Importação da imagem de fundo aqui viu
 import bemEstarImg from '../../assets/bem_estar.png';
 
 function CalculoIMCScreen() {
@@ -109,6 +109,7 @@ function CalculoIMCScreen() {
 
 export default CalculoIMCScreen
 
+//Só perfumaria kkkkkkkkkk
 const styles = StyleSheet.create({
     background: {
         flex: 1,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     container: {
-        backgroundColor: 'rgba(204,204,204,0.85)',
+        backgroundColor: 'rgba(31, 146, 146, 0.85)',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,

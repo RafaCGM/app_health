@@ -1,61 +1,113 @@
-import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
-import React, {useState} from "react";
+//Tirei o alert viu
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
+import React, { useState } from "react";
+import bemEstarImg from '../../assets/bem_estar.png';
 
-function LoginScreen({navigation}) {
+function LoginScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [erro, setErro] = useState('');
 
-    // identificar login
     const idfLogin = () => {
-        if(username === 'admin' && password === '123') {
-            navigation.navigate('Desktop');
-        }else{
-            Alert.alert('Erro identificado!','Login ou senha incorretos');
+        if (username === 'admin' && password === '123') {
+            //o erro é limpo caso o login seja bem-sucedido e 
+            //direciona para a tela Desktop
+            setErro('');
+            navigation.replace('Desktop');
+        } else {
+            setErro('Login ou senha incorretos');
         }
     };
 
-    return(
-        <View style={styles.container}>
-            <Text style={styles.titulo}>Login</Text>
-            <TextInput
-                style={styles.box}
-                placeholder="Usuário"
-                onChangeText={setUsername}
-                value={username}
-            />
-            <TextInput 
-                style={styles.box}
-                placeholder="Senha"
-                secureTextEntry
-                onChangeText={setPassword}
-                value={password}
+    return (
+        <ImageBackground source={bemEstarImg} style={styles.background} resizeMode="cover">
+            <View style={styles.container}>
+                <Text style={styles.titulo}>Login</Text>
+                <TextInput
+                    style={styles.box}
+                    placeholder="Usuário"
+                    placeholderTextColor="#555"
+                    onChangeText={setUsername}
+                    value={username}
+                    underlineColorAndroid={'transparent'}
                 />
-            <Button title="Entrar" onPress={idfLogin} />
-        </View>
+                <TextInput
+                    style={styles.box}
+                    placeholder="Senha"
+                    placeholderTextColor="#555"
+                    secureTextEntry
+                    onChangeText={setPassword}
+                    value={password}
+                    underlineColorAndroid={'transparent'}
+                />
+                {erro !== '' && (
+                    <Text style={styles.erro}>{erro}</Text>
+                )}
+                <TouchableOpacity style={styles.button} onPress={idfLogin}>
+                    <Text style={styles.buttonText}>Entrar</Text>
+                </TouchableOpacity>
+            </View>
+        </ImageBackground>
     );
 }
 
+//Só perfumaria kkkkkkkkkkk chat ajudou
 const styles = StyleSheet.create({
-    container: {
+    background: {
         flex: 1,
+        width: '100%',
+        height: '100%',
         justifyContent: 'center',
-        padding: 16,
+        alignItems: 'center'
+    },
+    container: {
+        backgroundColor: 'rgba(31, 146, 146, 0.85)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 24,
+        borderRadius: 16,
+        width: '90%',
+        alignSelf: 'center'
     },
     titulo: {
-        fontSize: 28,
-        marginBottom: 20,
+        fontSize: 32,
+        fontWeight: 'bold',
         textAlign: 'center',
+        color: '#000000',
+        marginBottom: 24
     },
     box: {
         height: 48,
-        borderWidth: 2,
+        borderWidth: 0,
         borderColor: '#499',
         borderRadius: 10,
-        marginBottom: 12,
+        marginBottom: 16,
         paddingHorizontal: 12,
-        width: 550,
-        alignSelf: 'center'
+        width: 250,
+        backgroundColor: '#fff',
+        fontSize: 18,
+        color: '#222'
     },
-})
+    button: {
+        backgroundColor: "#2AD131",
+        width: "80%",
+        height: 50,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 8,
+        marginTop: 16
+    },
+    buttonText: {
+        color: "#FFF",
+        fontSize: 20,
+        fontWeight: "bold"
+    },
+    erro: {
+        color: "#c00",
+        fontSize: 16,
+        marginBottom: 8,
+        textAlign: 'center'
+    }
+});
 
-export default LoginScreen
+export default LoginScreen;

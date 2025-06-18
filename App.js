@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -14,17 +15,12 @@ export default function App() {
     //Comentar toda a <NavigationContainer> com ctrl + ;
     //e descomentar os que estão em baixo
 
-    // <NavigationContainer>
-    //   <Stack.Navigator initialRouteName='Login'>
-    //     <Stack.Screen name='Login' component={LoginScreen} />
-    //     <Stack.Screen name='Desktop' component={DesktopScreen} />
-    //     <Stack.Screen name='CalculoIMC' component={CalculoIMCScreen} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-
-    // <LoginScreen />
-    // <DesktopScreen />
-    <CalculoIMCScreen />
-
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Login' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name='Login' component={LoginScreen} />
+        <Stack.Screen name='Desktop' component={DesktopScreen} />
+        <Stack.Screen name='CalculoIMC' component={CalculoIMCScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
