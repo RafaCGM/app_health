@@ -50,7 +50,7 @@ function CalculoIMCScreen() {
         <ImageBackground source={bemEstarImg} style={styles.background} resizeMode="cover">
             <View style={styles.container}>
                 <Text style={styles.titulo1}>Cálculo do IMC</Text>
-                <Text>Digite seu Peso</Text>
+                <Text style={styles.digite1}>Digite seu Peso</Text>
                 <TextInput
                     style={styles.textinput}
                     value={peso}
@@ -58,7 +58,7 @@ function CalculoIMCScreen() {
                     keyboardType="number-pad"
                 />
 
-                <Text>Digite sua Altura</Text>
+                <Text style={styles.digite1}>Digite sua Altura</Text>
                 <TextInput
                     style={styles.textinput}
                     value={altura}
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     container: {
-        backgroundColor: 'rgba(31, 146, 146, 0.85)',
+        backgroundColor: 'rgba(15, 15, 15, 0.85)',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
@@ -131,12 +131,12 @@ const styles = StyleSheet.create({
         fontSize: 32,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: '#000000',
+        color: '#fff',
         marginBottom: 24
     },
     textinput: {
-        fontSize: 25,
-        backgroundColor: '#dddd',
+        fontSize: 30,
+        backgroundColor: '#fff',
         color: 'black',
         borderRadius: 10,
         paddingLeft: 10,
@@ -197,6 +197,12 @@ const styles = StyleSheet.create({
         fontSize: 22,
         color: "#000",
         textAlign: "center"
+    },
+    digite1: {
+        color: '#fff',
+        fontSize: 18,
+        marginBottom: 4,
+        alignSelf: 'center'
     }
 });
        

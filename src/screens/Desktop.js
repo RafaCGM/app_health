@@ -28,18 +28,18 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     container: {
-        backgroundColor: 'rgba(31, 146, 146, 0.85)',
+        backgroundColor: 'rgba(18, 19, 19, 0.85)',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 24,
-        borderRadius: 16,
+        borderRadius: 5,
         width: '90%',
         alignSelf: 'center'
     },
     titulo: {
         fontSize: 28,
         fontWeight: 'bold',
-        color: '#000',
+        color: '#fff',
         marginBottom: 32,
         textAlign: 'center'
     },

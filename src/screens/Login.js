@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     container: {
-        backgroundColor: 'rgba(31, 146, 146, 0.85)',
+        backgroundColor: 'rgba(18, 19, 19, 0.85)',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 24,
-        borderRadius: 16,
+        borderRadius: 8,
         width: '90%',
         alignSelf: 'center'
     },
@@ -73,14 +73,14 @@ const styles = StyleSheet.create({
         fontSize: 32,
         fontWeight: 'bold',
         textAlign: 'center',
-        color: '#000000',
+        color: '#fff',
         marginBottom: 24
     },
     box: {
         height: 48,
-        borderWidth: 0,
-        borderColor: '#499',
-        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
         marginBottom: 16,
         paddingHorizontal: 12,
         width: 250,
@@ -89,18 +89,19 @@ const styles = StyleSheet.create({
         color: '#222'
     },
     button: {
-        backgroundColor: "#2AD131",
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
         width: "80%",
         height: 50,
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 8,
+        borderRadius: 2,
         marginTop: 16
     },
     buttonText: {
         color: "#FFF",
         fontSize: 20,
         fontWeight: "bold"
+        
     },
     erro: {
         color: "#c00",
