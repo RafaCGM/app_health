@@ -11,13 +11,7 @@ function DesktopScreen({ navigation }) {
                         <Text style={styles.boxText}>IMC</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GastoCalorico')}>
-                        <Text style={styles.boxText}>Gasto Calórico</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GuiaNutricional')}>
-                        <Text style={styles.boxText}>Guia Nutricional</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('Meditacao')}>
-                        <Text style={styles.boxText}>Meditação</Text>
+                        <Text style={styles.boxText}>Fiz n viu kkkk ph</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -55,8 +49,8 @@ const styles = StyleSheet.create({
         gap: 24
     },
     box: {
-        backgroundColor: "#2AD131",
-        borderRadius: 12,
+        backgroundColor: '#000000',
+        borderRadius: 5,
         paddingVertical: 36,
         paddingHorizontal: 32,
         marginHorizontal: 12,

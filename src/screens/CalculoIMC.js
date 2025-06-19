@@ -4,7 +4,7 @@ import { useState } from "react";
 // Importação da imagem de fundo aqui viu
 import bemEstarImg from '../../assets/bem_estar.png';
 
-function CalculoIMCScreen() {
+function CalculoIMCScreen({ navigation }) {
     const [peso, setPeso] = useState('');
     const [altura, setAltura] = useState('');
     const [genero, setGenero] = useState(null); // null, 'F', 'M'
@@ -48,6 +48,9 @@ function CalculoIMCScreen() {
 
     return (
         <ImageBackground source={bemEstarImg} style={styles.background} resizeMode="cover">
+            <TouchableOpacity style={styles.voltar} onPress={() => navigation.goBack()}>
+                <Text style={styles.voltarText}>Voltar</Text>
+            </TouchableOpacity>
             <View style={styles.container}>
                 <Text style={styles.titulo1}>Cálculo do IMC</Text>
                 <Text style={styles.digite1}>Digite seu Peso</Text>
@@ -203,6 +206,21 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginBottom: 4,
         alignSelf: 'center'
+    },
+
+    voltar: {
+        position: 'absolute',
+        top: 40, 
+        left: 20,
+        backgroundColor: 'rgba(18, 19, 19, 0.85)',
+        paddingVertical: 8,
+        paddingHorizontal: 10,
+        borderRadius: 2
+    },
+    voltarText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold'
     }
 });
        
