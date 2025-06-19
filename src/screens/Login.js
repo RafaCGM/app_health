@@ -1,7 +1,7 @@
 //Tirei o alert viu
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import React, { useState } from "react";
-import bemEstarImg from '../../assets/bem_estar.png';
+import heathImg from '../../assets/health.jpg';
 
 function LoginScreen({ navigation }) {
     const [username, setUsername] = useState('');
@@ -20,7 +20,7 @@ function LoginScreen({ navigation }) {
     };
 
     return (
-        <ImageBackground source={bemEstarImg} style={styles.background} resizeMode="cover">
+        <ImageBackground source={heathImg} style={styles.background} resizeMode="cover">
             <View style={styles.container}>
                 <Text style={styles.titulo}>Login</Text>
                 <TextInput
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     container: {
-        backgroundColor: 'rgba(18, 19, 19, 0.85)',
+        backgroundColor: 'rgba(31, 32, 32, 0.85)',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 24,
