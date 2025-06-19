@@ -10,8 +10,8 @@ function DesktopScreen({ navigation }) {
                     <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('CalculoIMC')}>
                         <Text style={styles.boxText}>IMC</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GastoCalorico')}>
-                        <Text style={styles.boxText}>Fiz n viu kkkk ph</Text>
+                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('gastoCalorico')}>
+                        <Text style={styles.boxText}>Clique aqui</Text>
                     </TouchableOpacity>
                 </View>
             </View>
