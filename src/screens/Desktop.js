@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
         gap: 24
     },
     box: {
-        backgroundColor: "#2AD131",
-        borderRadius: 12,
+        backgroundColor: '#000000',
+        borderRadius: 5,
         paddingVertical: 36,
         paddingHorizontal: 32,
         marginHorizontal: 12,
