@@ -7,18 +7,22 @@ function DesktopScreen({ navigation }) {
             <View style={styles.container}>
                 <Text style={styles.titulo}>Escolha uma opção</Text>
                 <View style={styles.boxContainer}>
-                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('CalculoIMC')}>
-                        <Text style={styles.boxText}>IMC</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GastoCalorico')}>
-                        <Text style={styles.boxText}>Gasto Calórico</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GuiaNutricional')}>
-                        <Text style={styles.boxText}>Guia Nutricional</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('Meditacao')}>
-                        <Text style={styles.boxText}>Meditação</Text>
-                    </TouchableOpacity>
+                    <View style={styles.parLinhas}>
+                        <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('CalculoIMC')}>
+                            <Text style={styles.boxText}>IMC</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GastoCalorico')}>
+                            <Text style={styles.boxText}>Gasto Calórico</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.parLinhas}>
+                        <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GuiaNutricional')}>
+                            <Text style={styles.boxText}>Guia Nutricional</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('Meditacao')}>
+                            <Text style={styles.boxText}>Meditação</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </ImageBackground>
@@ -50,9 +54,13 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     boxContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    parLinhas: {
         flexDirection: 'row',
         justifyContent: 'center',
-        gap: 24
+        marginBottom: 24,
     },
     box: {
         backgroundColor: '#000000',
