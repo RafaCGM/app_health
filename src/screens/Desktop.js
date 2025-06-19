@@ -11,7 +11,13 @@ function DesktopScreen({ navigation }) {
                         <Text style={styles.boxText}>IMC</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GastoCalorico')}>
-                        <Text style={styles.boxText}>Fiz n viu kkkk ph</Text>
+                        <Text style={styles.boxText}>Gasto Calórico</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('GuiaNutricional')}>
+                        <Text style={styles.boxText}>Guia Nutricional</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('Meditacao')}>
+                        <Text style={styles.boxText}>Meditação</Text>
                     </TouchableOpacity>
                 </View>
             </View>
