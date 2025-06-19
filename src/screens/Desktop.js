@@ -65,12 +65,12 @@ const styles = StyleSheet.create({
     box: {
         backgroundColor: '#000000',
         borderRadius: 5,
-        paddingVertical: 36,
-        paddingHorizontal: 32,
+        paddingVertical: 25,
+        paddingHorizontal: 20,
         marginHorizontal: 12,
         alignItems: 'center',
-        justifyContent: 'center',
-        elevation: 4
+        justifyContent: 'center'
+        
     },
     boxText: {
         color: "#FFF",
