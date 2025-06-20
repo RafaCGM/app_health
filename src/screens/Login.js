@@ -2,17 +2,20 @@
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import React, { useState } from "react";
 import heathImg from '../../assets/health.jpg';
+import { AuthContext } from "./AuthContext";
 
 function LoginScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [erro, setErro] = useState('');
+    const { setUser } = React.useContext(AuthContext);
 
     const idfLogin = () => {
         if (username === 'admin' && password === '123') {
             //o erro é limpo caso o login seja bem-sucedido e 
             //direciona para a tela Desktop
             setErro('');
+            setUser('admin');
             navigation.replace('Desktop');
         } else {
             setErro('Login ou senha incorretos');

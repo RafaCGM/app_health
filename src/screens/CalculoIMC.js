@@ -1,8 +1,10 @@
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useState } from "react";
 
+
 // Importação da imagem de fundo aqui viu
 import bemEstarImg from '../../assets/bem_estar.png';
+import UserInfo from "./UserInfo";
 
 function CalculoIMCScreen({ navigation }) {
     const [peso, setPeso] = useState('');
@@ -47,7 +49,9 @@ function CalculoIMCScreen({ navigation }) {
     };
 
     return (
+        
         <ImageBackground source={bemEstarImg} style={styles.background} resizeMode="cover">
+            <UserInfo />
             <TouchableOpacity style={styles.voltar} onPress={() => navigation.goBack()}>
                 <Text style={styles.voltarText}>Voltar</Text>
             </TouchableOpacity>
@@ -212,7 +216,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 40, 
         left: 20,
-        backgroundColor: 'rgba(18, 19, 19, 0.85)',
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
         paddingVertical: 8,
         paddingHorizontal: 10,
         borderRadius: 2

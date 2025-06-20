@@ -1,9 +1,11 @@
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import bemEstarImg from '../../assets/bem_estar.png';
+import UserInfo from "./UserInfo";
 
 function DesktopScreen({ navigation }) {
     return (
         <ImageBackground source={bemEstarImg} style={styles.background} resizeMode="cover">
+            <UserInfo />
             <View style={styles.container}>
                 <Text style={styles.titulo}>Escolha uma opção</Text>
                 <View style={styles.boxContainer}>

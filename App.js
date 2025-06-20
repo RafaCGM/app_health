@@ -7,27 +7,25 @@ import CalculoIMCScreen from './src/screens/CalculoIMC';
 import GastoCaloricoScreen from './src/screens/gastoCalorico';
 import GuiaNutricionalScreen from './src/screens/guiaNutricional';
 import MeditacaoScreen from './src/screens/Meditacao';
+import { AuthProvider } from './src/screens/AuthContext';
 
 const Stack = createNativeStackNavigator();
-
-export default function App() {
-  return (
-
-    //RECOMENDAÇÃO
+     //RECOMENDAÇÃO
     //Comentar toda a <NavigationContainer> com ctrl + ;
     //e descomentar os que estão em baixo
-
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login' screenOptions={{ headerShown: false }}>
-
-        <Stack.Screen name='Login' component={LoginScreen} />
-        <Stack.Screen name='Desktop' component={DesktopScreen} />
-        <Stack.Screen name='CalculoIMC' component={CalculoIMCScreen} />
-        <Stack.Screen name='GastoCalorico' component={GastoCaloricoScreen} />
-        <Stack.Screen name='GuiaNutricional' component={GuiaNutricionalScreen} />
-        <Stack.Screen name='Meditacao' component={MeditacaoScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-
+export default function App() {
+  return (
+    <AuthProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Login' screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='Login' component={LoginScreen} />
+          <Stack.Screen name='Desktop' component={DesktopScreen} />
+          <Stack.Screen name='CalculoIMC' component={CalculoIMCScreen} />
+          <Stack.Screen name='GastoCalorico' component={GastoCaloricoScreen} />
+          <Stack.Screen name='GuiaNutricional' component={GuiaNutricionalScreen} />
+          <Stack.Screen name='Meditacao' component={MeditacaoScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </AuthProvider>
   );
 }
