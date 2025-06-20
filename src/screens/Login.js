@@ -11,7 +11,7 @@ function LoginScreen({ navigation }) {
     const { setUser } = React.useContext(AuthContext);
 
     const idfLogin = () => {
-        if (username === 'admin' && password === '123') {
+        if (username === 'admin' && password === '123456') {
             //o erro é limpo caso o login seja bem-sucedido e 
             //direciona para a tela Desktop
             setErro('');
